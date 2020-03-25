@@ -1,0 +1,17 @@
+.navItems{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 200px;
+    border:2px solid black;
+   li{
+       margin-top: 30px;
+       list-style: none;
+   }
+
+}
+li:hover {
+    color:red;
+    cursor:pointer;
+    transition:0.5s;
+}
