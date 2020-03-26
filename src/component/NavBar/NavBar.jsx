@@ -6,10 +6,10 @@ import NavItems from "../NavBar/NavItems/NavItems";
 export default class NavBar extends Component {
     render() {
         return (
-            <>
+            <div className={style.wrap}>
                 <NavItems />
             
-            </>
+            </div>
         )
     }
 }

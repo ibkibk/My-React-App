@@ -8,6 +8,8 @@ export default class NavItems extends Component {
         return (
             <div className={style.navItems}>
                 <ul>
+                    <li>LOGIN</li>
+                    <li>MY BOOKS</li>
                     <li>BESTSELLERS</li>
                     <li>NON-FINCTION</li>
                     <li>FICTION</li>
