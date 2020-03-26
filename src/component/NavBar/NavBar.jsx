@@ -7,8 +7,11 @@ export default class NavBar extends Component {
     render() {
         return (
             <div className={style.wrap}>
-                <NavItems />
-            
+                <NavItems route="/login" name="Login" />
+                <NavItems route="/books" name="Books" />
+                <NavItems route="/private/mybooks" name="MyBooks" />
+                <NavItems route="/category" name="Fiction" />
+                <NavItems route="/category" name="Non-fiction" />
             </div>
         )
     }

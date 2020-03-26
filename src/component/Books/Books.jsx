@@ -29,11 +29,6 @@ export default class Movie extends Component {
         this.setState({searchField:e.target.value})
     }
 
-    // componentDidMount(){
-    //     fetch('https://www.googleapis.com/books/v1/volumes')
-    //       .then(res =>res.json())
-    //       .then(data=>this.setState({ books:data }))
-    // }
     render(){
         return(
             <div>

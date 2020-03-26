@@ -4,23 +4,24 @@ import BookCard from "../BookCard/BookCard";
 
 
 
-const BookList =(props) =>{
-   
-        return(
-            <div className={style.list}>
-                 {
-                     props.books.map((book,i)=>{
-                         return<BookCard 
-                                key={i}
-                                image={book.volumeInfo.imageLinks.thumbnail}
-                                title={book.volumeInfo.title}
-                                author={book.volumeInfo.authors}
-                                published={book.volumeInfo.publishedDate}
-                                />
-                     })
-                 }
-            </div>
-        )
+const BookList = (props) => {
+
+    return (
+        <div className={style.list}>
+
+            {
+                props.books.map((book, i) => {
+                    return <BookCard
+                        key={i}
+                        image={book.volumeInfo.imageLinks.thumbnail}
+                        title={book.volumeInfo.title}
+                        author={book.volumeInfo.authors}
+                        published={book.volumeInfo.publishedDate}
+                    />
+                })
+            }
+        </div>
+    )
 }
 
-export default  BookList;
+export default BookList;

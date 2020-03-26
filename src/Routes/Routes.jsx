@@ -1,17 +1,60 @@
 import React, { Component } from "react";
-import { Router, Redirect } from "@reach/router";
+import { Router, Redirect, globalHistory } from "@reach/router";
 import Login from "../component/Login/Login";
+import firebase, { providers } from "../firebase";
+import PrivateRoutes from "./PrivateRoutes";
+import MyBooks from "../component/MyBooks/MyBooks";
+import Books from "../component/Books/Books";
+import style from "./Routes.module.scss";
+import BookList from "../component/BookList/BookList";
+
+
 
 
 
 
 export default class Routes extends Component {
-    render() {
-        return (
-            <Router>
+    state = {
+        user: null
+    }
+    signIn = () => {
+        firebase
+            .auth()
+            .signInWithPopup(providers.google)
+
+            .then(result => {
               
-              <Login path="login" signIn={this.signIn}/>
-               
+                this.setState({ user: result.user })
+              
+            })
+            .then(result => {
+                globalHistory.navigate("private/mybooks")
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    signOut = () => {
+        firebase
+            .auth()
+            .signOut()
+            .then(() => {
+                this.setState({ user: null });
+                globalHistory.navigate("/login");
+            })
+    }
+
+    render() {
+        console.log(this.state.user)
+        return (
+            <Router className={style.router}>
+                <BookList  path="booklist"/>
+                <Books path="books"/>
+                <Login path="login" signIn={this.signIn} />
+                <PrivateRoutes path="private" user={this.state.user}>
+                    <MyBooks path="mybooks" signOut={this.signOut} />
+                </PrivateRoutes>
+
             </Router>
         )
     }

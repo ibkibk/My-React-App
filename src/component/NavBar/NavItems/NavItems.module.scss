@@ -1,24 +1,11 @@
-.navItems{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    ul{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        margin-right: 30px;
-        margin-top:150px ;
-
+.item{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    &:hover{
+        color: blueviolet;
     }
-
-   li{
-       margin-top: 30px;
-       list-style: none;
-   }
-
-}
-li:hover {
-    color:red;
-    cursor:pointer;
-    transition:0.5s;
+  
 }

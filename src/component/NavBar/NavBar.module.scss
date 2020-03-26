@@ -1,8 +1,13 @@
 .wrap {
+    display: flex;
     position: fixed;
-    top: 0;
+    top: 150px;
     left: 0;
     height: 100%;
-    background-color: red;
+    width: 200px;
+  
+    flex-direction: column;
+    align-items: center;
+  
     // width: 20%;
 }

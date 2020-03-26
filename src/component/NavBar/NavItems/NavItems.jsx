@@ -7,15 +7,11 @@ export default class NavItems extends Component {
     render() {
         return (
             <div className={style.navItems}>
-                <ul>
-                    <li>LOGIN</li>
-                    <li>MY BOOKS</li>
-                    <li>BESTSELLERS</li>
-                    <li>NON-FINCTION</li>
-                    <li>FICTION</li>
-                </ul>
+                <p className={style.navItem} onClick={this.props.toggleMenu}>
+                    <Link className={style.item} to={this.props.route}>{this.props.name}</Link>
+                </p>
             </div>
-       
+
         )
     }
 }
