@@ -4,9 +4,10 @@ import Login from "../component/Login/Login";
 import firebase, { providers } from "../firebase";
 import PrivateRoutes from "./PrivateRoutes";
 import MyBooks from "../component/MyBooks/MyBooks";
-import Books from "../component/Books/Books";
+// import Books from "../component/Books/Books";
 import style from "./Routes.module.scss";
 import BookList from "../component/BookList/BookList";
+import NotFound from "../component/NavBar/NotFound/NotFound";
 
 
 
@@ -49,7 +50,8 @@ export default class Routes extends Component {
         return (
             <Router className={style.router}>
                 <BookList  path="booklist"/>
-                <Books path="books"/>
+                {/* <Books path="books"/> */}
+                <NotFound path="default"/>
                 <Login path="login" signIn={this.signIn} />
                 <PrivateRoutes path="private" user={this.state.user}>
                     <MyBooks path="mybooks" signOut={this.signOut} />
