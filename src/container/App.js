@@ -13,7 +13,7 @@ function App() {
       <Header />
       {/* <SearchBar /> */}
       <Books />
-      <NavBar />
+      {/* <NavBar /> */}
       <Routes />
       
     </div>

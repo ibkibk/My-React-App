@@ -8,6 +8,7 @@ import MyBooks from "../component/MyBooks/MyBooks";
 import style from "./Routes.module.scss";
 import BookList from "../component/BookList/BookList";
 import NotFound from "../component/NavBar/NotFound/NotFound";
+import AddBook from "../component/AddBook/AddBook"
 
 
 
@@ -52,9 +53,11 @@ export default class Routes extends Component {
                 <BookList  path="booklist"/>
                 {/* <Books path="books"/> */}
                 <NotFound path="default"/>
-                <Login path="login" signIn={this.signIn} />
+                {/* <Login path="login" signIn={this.signIn} /> */}
+                <AddBook path="addbook"/>
                 <PrivateRoutes path="private" user={this.state.user}>
-                    <MyBooks path="mybooks" signOut={this.signOut} />
+                   
+                    {/* <MyBooks path="mybooks" signOut={this.signOut} /> */}
                 </PrivateRoutes>
 
             </Router>
