@@ -13,7 +13,6 @@ export default class BookCard extends Component {
                 <div className={style.desc}>
                     <h2>{this.props.title}</h2>
                     <h3>by {this.props.author}</h3>
-
                     <p>Published Data: {this.props.published === '0000' ? 'not available': this.props.published.substring(0,4)}</p>
                 </div>
                 </section>

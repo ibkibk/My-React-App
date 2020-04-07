@@ -5,13 +5,13 @@ import request from "superagent";
 import BookList from "../BookList/BookList";
 
 
-export default class Movie extends Component {
+export default class Books extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             books: [],
-            searchField: ""
+            searchField: "",
         }
     }
 
@@ -22,30 +22,15 @@ export default class Movie extends Component {
             .get('https://www.googleapis.com/books/v1/volumes')
             .query({ q: this.state.searchField })
             .then((data) => {
-                console.log(data);
-                const cleanData = this.cleanData(data)
-                    this.setState({ books: cleanData });
-                      if (data.body.totalItems != 0) {
-                        this.setState({ books: [...data.body.items] });
+                      if (data.body.totalItems !== 0) {
+                          this.setState({ books: [...data.body.items] });
                       }
         
             })
     }
     handleSearch = (e) => {
         this.setState({ searchField: e.target.value })
-    }
-
-    cleanData= (data) => {
-       const cleanedData = data.body.items.map((book)=>{
-            if(book.volumeInfo.hasOwnProperty('publishedDate')=== false){
-                book.volumeInfo['publishedDate'] ='0000';
-            }else if(book.volumeInfo.hasOwnProperty('imageLinks') === false){
-                book.volumeInfo['imageLinks'] = {thumbnail: ''}
-            }
-
-            return book;
-       })
-       return cleanedData
+        // console.log(e.target.value);
     }
 
     render() {

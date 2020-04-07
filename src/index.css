@@ -5,8 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-   background-color: #161748 ;
    background-image: url(./images/oldbooks.png);
+   background-size: 100%;
+  
   
 }
 
